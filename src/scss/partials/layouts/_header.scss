@@ -1,0 +1,25 @@
+.header{
+    background-color:white;
+    position: fixed;
+    top: 0;
+    left:0;
+    display:flex;
+    width:100%;
+    border-bottom: #D1D0CE .1rem solid;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    img{
+        width:4rem;
+        height:4rem;
+    }
+}
+
+.sign-in-box{
+    background-color: $blue-lotus;
+    font-weight: bold;
+    color: white;
+    padding: 1rem;
+    font-size: 1.3rem;
+    border-radius:.8rem .8rem;
+}

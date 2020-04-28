@@ -333,7 +333,7 @@ body {
   left: 0;
   display: flex;
   width: 100%;
-  border-bottom: #D1D0CE 0.1rem solid;
+  border-bottom: #d1d0ce 0.1rem solid;
   padding: 1rem;
   justify-content: space-between;
   align-items: center;
@@ -343,13 +343,19 @@ body {
   height: 4rem;
 }
 
-.sign-in-box {
+.sign-in-out-box {
   background-color: #6960EC;
   font-weight: bold;
   color: white;
   padding: 1rem;
   font-size: 1.3rem;
   border-radius: 0.8rem 0.8rem;
+  border: none;
+}
+.sign-in-out-box:hover {
+  background-color: #1F45FC;
+  transition: background-color 250ms linear;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */

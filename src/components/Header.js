@@ -1,16 +1,17 @@
-import React from 'react';
-import logo from '../img/twitch.png';
+import React from "react";
+import logo from "../img/twitch.png";
+import GoogleAuth from "./GoogleAuth";
 
-const Header = () =>{
-    return(
-        <div class="header">
+const Header = () => {
+    return (
+        <div className="header">
             <div>
-                <img src={logo}/>
+                <img src={logo} alt="Twitch logo" />
             </div>
             <div>
-                <div class="sign-in-box">Sign In</div>
+                <GoogleAuth />
             </div>
         </div>
-    )
-}
+    );
+};
 export default Header;

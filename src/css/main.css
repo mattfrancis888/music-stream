@@ -343,8 +343,8 @@ body {
   height: 4rem;
 }
 
-.sign-in-out-box {
-  background-color: #6960EC;
+.blueBottom {
+  background-color: #6960ec;
   font-weight: bold;
   color: white;
   padding: 1rem;
@@ -352,10 +352,44 @@ body {
   border-radius: 0.8rem 0.8rem;
   border: none;
 }
-.sign-in-out-box:hover {
-  background-color: #1F45FC;
+.blueBottom:hover {
+  background-color: #1f45fc;
   transition: background-color 250ms linear;
   cursor: pointer;
+}
+
+.createTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+
+.createInputs {
+  display: inline-block;
+  background-color: #dfdfdf;
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+}
+.createInputs:focus {
+  border-color: #6960ec;
+  background-color: white;
+}
+
+.createFormSection {
+  display: grid;
+  grid-template-columns: repeat(2, 30rem);
+  margin-bottom: 1rem;
+}
+.createFormSection h1 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.errorText {
+  color: red;
 }
 
 /*# sourceMappingURL=main.css.map */

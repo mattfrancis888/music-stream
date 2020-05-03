@@ -22,14 +22,22 @@ export const signOut = () => {
     };
 };
 
-export const createStream = (formValues) => async (dispatch) => {
+export const createStream = (formValues) => async (dispatch, getState) => {
     //Must use redux thunk because action creators must return a plain object.
     //And we are tyring to return const result = await axios.get(...) -> (eg; return {payload: result})
     //https://www.udemy.com/course/react-redux/learn/lecture/12586860#announcements
     // return async (dispatch) => {
     //     //dispatch and getState is automatically passed in by redux-thunk; dispatch acts like "return"
     // };
-    const response = await streams.post("/streams", formValues);
+    const { userId } = getState().auth;
+    //getState() gets all our states
+    //Get userID object from auth state (defined state in reducers/index.js).
+
+    //const response = await streams.post("/streams", formValues });
+    //formValues is an object
+
+    const response = await streams.post("/streams", { ...formValues, userId });
+    //Add userid object to formValues object
     dispatch({
         type: CREATE_STREAM,
         payload: response.data,

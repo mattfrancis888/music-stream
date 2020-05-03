@@ -1,0 +1,17 @@
+.blueButton {
+    @include commonButton;
+    background-color: $blue-lotus;
+    &:hover {
+        background-color: $dark-blue;
+        transition: background-color 250ms linear;
+    }
+}
+
+.redButton {
+    @include commonButton;
+    background-color: red;
+    &:hover {
+        background-color: $dark-red;
+        transition: background-color 250ms linear;
+    }
+}

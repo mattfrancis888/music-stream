@@ -1,21 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchStreams } from "../../actions";
 
 const StreamList = (props) => {
-    const [streams, setStreams] = useState("");
-
     useEffect(() => {
         props.fetchStreams();
     }, []);
 
-    console.log(props.streams);
+    const renderAdmin = (stream) => {
+        //Show edit and delete button in the stream list if a stream belongs to them
+        //Will disappear when user signs out
+        if (stream.userId === props.currentUserId) {
+            return (
+                <div>
+                    <button className="blueButton"> EDIT </button>
+                    <button className="redButton"> DELETE </button>
+                </div>
+            );
+        }
+    };
+
     const renderList = () => {
         return props.streams.map((stream) => {
             return (
-                <div className="streamListContainer">
+                <div className="streamListContainer" key={stream.id}>
                     <h1 className="streamListTitle">{stream.title}</h1>
                     <h1 className="streamListDesc">{stream.description}</h1>
+                    {renderAdmin(stream)}
                 </div>
             );
         });
@@ -24,7 +35,10 @@ const StreamList = (props) => {
 };
 
 const mapStateToProps = (state) => {
-    return { streams: Object.values(state.streams) };
+    return {
+        streams: Object.values(state.streams),
+        currentUserId: state.auth.userId,
+    };
     //Object.values :
     //all the objects inside state.streams will be put into an array };
 };

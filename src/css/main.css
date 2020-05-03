@@ -343,19 +343,42 @@ body {
   height: 4rem;
 }
 
-.blueBottom {
-  background-color: #6960ec;
+.blueButton {
   font-weight: bold;
   color: white;
   padding: 1rem;
   font-size: 1.3rem;
   border-radius: 0.8rem 0.8rem;
   border: none;
+  background-color: #6960ec;
 }
-.blueBottom:hover {
+.blueButton:hover {
   background-color: #1f45fc;
   transition: background-color 250ms linear;
   cursor: pointer;
+}
+.blueButton:hover {
+  background-color: #1f45fc;
+  transition: background-color 250ms linear;
+}
+
+.redButton {
+  font-weight: bold;
+  color: white;
+  padding: 1rem;
+  font-size: 1.3rem;
+  border-radius: 0.8rem 0.8rem;
+  border: none;
+  background-color: red;
+}
+.redButton:hover {
+  background-color: #1f45fc;
+  transition: background-color 250ms linear;
+  cursor: pointer;
+}
+.redButton:hover {
+  background-color: #d10000;
+  transition: background-color 250ms linear;
 }
 
 .createTitle {

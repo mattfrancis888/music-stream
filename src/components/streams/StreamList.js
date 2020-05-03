@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchStreams } from "../../actions";
+import { Link } from "react-router-dom";
 
 const StreamList = (props) => {
     useEffect(() => {
@@ -20,6 +21,18 @@ const StreamList = (props) => {
         }
     };
 
+    const renderCreate = () => {
+        if (props.isSignedIn) {
+            return (
+                <div>
+                    <Link to="/streams/new">
+                        <button className="blueButton"> Create Stream </button>
+                    </Link>
+                </div>
+            );
+        }
+    };
+
     const renderList = () => {
         return props.streams.map((stream) => {
             return (
@@ -31,13 +44,20 @@ const StreamList = (props) => {
             );
         });
     };
-    return <div>{renderList()}</div>;
+
+    return (
+        <React.Fragment>
+            <div>{renderList()}</div>
+            {renderCreate()}
+        </React.Fragment>
+    );
 };
 
 const mapStateToProps = (state) => {
     return {
         streams: Object.values(state.streams),
         currentUserId: state.auth.userId,
+        isSignedIn: state.auth.isSignedIn,
     };
     //Object.values :
     //all the objects inside state.streams will be put into an array };

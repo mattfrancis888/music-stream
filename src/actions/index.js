@@ -9,6 +9,8 @@ import {
     EDIT_STREAM,
 } from "./types";
 
+import history from "../history";
+
 export const signIn = (userId) => {
     return {
         type: SIGN_IN,
@@ -45,6 +47,8 @@ export const createStream = (formValues) => async (dispatch, getState) => {
     //Axios returns a json object that you need to access via .data to get the data
     //post to streams array in db.json. Changing "/sterams" to other names will result in data
     //not updating to streams array
+
+    history.push("/"); //Go to / after creating a stream
 };
 
 export const fetchStreams = () => async (dispatch) => {

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../img/twitch.png";
 import GoogleAuth from "./GoogleAuth";
 
@@ -6,7 +7,9 @@ const Header = () => {
     return (
         <div className="header">
             <div>
-                <img src={logo} alt="Twitch logo" />
+                <Link to="/">
+                    <img src={logo} alt="Twitch logo" />
+                </Link>
             </div>
             <div>
                 <GoogleAuth />

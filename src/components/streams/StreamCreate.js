@@ -51,7 +51,7 @@ class StreamCreate extends React.Component {
                             component={this.renderInput}
                         />
                     </div>
-                    <button className="blueBottom">Submit</button>
+                    <button className="blueButton">Submit</button>
                 </form>
             </React.Fragment>
         );

@@ -392,4 +392,20 @@ body {
   color: red;
 }
 
+.streamListTitle {
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.streamListDesc {
+  font-size: 1.3rem;
+  color: #8b8b8b;
+  margin: 0;
+}
+
+.streamListContainer {
+  padding: 1rem 0;
+}
+
 /*# sourceMappingURL=main.css.map */

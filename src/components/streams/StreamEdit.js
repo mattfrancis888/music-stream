@@ -12,7 +12,7 @@ const StreamEdit = (props) => {
 
     const onSubmit = (formValues) => {
         //Form value is automatically passed
-        console.log(formValues);
+        props.editStream(props.match.params.id, formValues);
     };
     //console.log(props);
     //Because we use <route> there are several props that are automatically passed into the componenet
@@ -24,11 +24,20 @@ const StreamEdit = (props) => {
     return (
         <React.Fragment>
             <h3> Edit A Stream</h3>
-            <StreamForm initialValues={props.stream} onSubmit={onSubmit} />
+            <StreamForm
+                initialValues={{
+                    title: props.stream.title,
+                    description: props.stream.description,
+                }}
+                onSubmit={onSubmit}
+            />
         </React.Fragment>
     );
     //Initial values in StreamForm is a redux-form property. It will assign the <input> with the values based on their names
     //For example, try passing initialValues = { { title: "edit me", description: "desc" } }
+
+    //it's importnat that we do not pass in the entire props.stream object to initialValues because redux-form will include userID and id into the
+    //form values! which can intrude with future-uses of streamForm.values
 };
 
 const mapStateToProps = (state, ownProps) => {

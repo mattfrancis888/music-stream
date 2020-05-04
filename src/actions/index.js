@@ -68,12 +68,15 @@ export const fetchStream = (id) => async (dispatch) => {
 };
 
 export const editStream = (id, formValues) => async (dispatch) => {
-    const response = await streams.put(`streams/${id}`, formValues);
-    //put updates single resource
+    const response = await streams.patch(`streams/${id}`, formValues);
+    //put updates all the object properties! It can delete some porperties if some properties are missing
+    //use patch if you only want to update specific properties. In this case, patch is used because formValues only has
+    //title and description; in the object. By using patch, we don't remove the userID and id properties
     dispatch({
         type: EDIT_STREAM,
         payload: response.data,
     });
+    history.push("/");
 };
 export const deleteStream = (id) => async (dispatch) => {
     await streams.delete(`streams/${id}`);

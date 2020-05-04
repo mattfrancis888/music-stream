@@ -14,7 +14,9 @@ const StreamList = (props) => {
         if (stream.userId === props.currentUserId) {
             return (
                 <div>
-                    <button className="blueButton"> EDIT </button>
+                    <Link to={`/streams/edit/${stream.id}`}>
+                        <button className="blueButton"> EDIT </button>
+                    </Link>
                     <button className="redButton"> DELETE </button>
                 </div>
             );

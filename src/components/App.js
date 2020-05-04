@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Router } from "react-router-dom";
+import { Route, Router } from "react-router-dom";
 import Header from "./Header";
 import StreamCreate from "./streams/StreamCreate";
 import StreamList from "./streams/StreamList";

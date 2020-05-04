@@ -8,7 +8,7 @@ class StreamCreate extends React.Component {
     onSubmit = (formValues) => {
         //event.preventDefault()
         //Redux automaticlaly calls it with handleSubmit
-        //form values are the values from the fields that redux-form automatiacally passes
+        //form values are the values from the fields that redux-form automatiacally passes [Which is done in Streamform]
         //after clicking the submit button
         this.props.createStream(formValues);
     };

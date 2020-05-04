@@ -27,14 +27,13 @@ class StreamForm extends React.Component {
 
     onSubmit = (formValues) => {
         //event.preventDefault() is automatically called with handleSubmit, a redux-form property
-        //form values are the values from the fields that redux-form automatiacally passes
+        //form values are the values from the fields that redux-form automatiacally passes [which is done in streamForm]
         //after clicking the submit button
         this.props.onSubmit(formValues);
     };
     render() {
         return (
             <React.Fragment>
-                <div className="createTitle">Create Stream</div>
                 <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
                     <div className="createFormSection">
                         <h1> Enter Title </h1>

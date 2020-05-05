@@ -1,36 +1,10 @@
 {
-  "streams": [
-    {
-      "title": "hi",
-      "description": "bye",
-      "id": 1
-    },
-    {
-      "title": "hi",
-      "description": "bye",
-      "id": 2
-    },
-    {
-      "title": "matt",
-      "description": "cool",
-      "id": 3
-    },
-    {
-      "title": "a",
-      "description": "d",
-      "id": 4
-    },
-    {
-      "title": "navigation",
-      "description": "you  are cool matt!",
-      "userId": "114816475139990738295",
-      "id": 6
-    },
-    {
-      "title": "refactor",
-      "description": "refactored code",
-      "userId": "114816475139990738295",
-      "id": 7
-    }
-  ]
+    "streams": [
+        {
+            "title": "navigation",
+            "description": "you  are cool matt!",
+            "userId": "114816475139990738295",
+            "id": 6
+        }
+    ]
 }

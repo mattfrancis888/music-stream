@@ -17,7 +17,9 @@ const StreamList = (props) => {
                     <Link to={`/streams/edit/${stream.id}`}>
                         <button className="blueButton"> EDIT </button>
                     </Link>
-                    <button className="redButton"> DELETE </button>
+                    <Link to={`streams/delete/${stream.id}`}>
+                        <button className="redButton"> DELETE </button>
+                    </Link>
                 </div>
             );
         }

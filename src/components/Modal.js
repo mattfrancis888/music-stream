@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import history from "../history";
 
 //We use portals + modals instead of directly creating a component and use it
 //inside the component tree structure because if a parent component
@@ -9,24 +8,16 @@ import history from "../history";
 //cause layout issues
 const Modal = (props) => {
     return ReactDOM.createPortal(
-        <div
-            onClick={() => {
-                history.push("/");
-            }}
-            className="modal"
-        >
+        <div onClick={props.onDismiss} className="modal">
             <div
                 onClick={(e) => {
                     e.stopPropagation();
                 }}
                 className="modalBox"
             >
-                <h2>Delete Stream</h2>
-                <h3>Are you sure you want to delete the stream?</h3>
-                <div>
-                    <button className="blueButton">Delete</button>
-                    <button className="greyButton">Cancel</button>
-                </div>
+                <h2>{props.title}</h2>
+                <h3>{props.content}</h3>
+                {props.actions}
             </div>
         </div>,
         document.querySelector("#modal")

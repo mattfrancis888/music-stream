@@ -41,7 +41,9 @@ const StreamList = (props) => {
         return props.streams.map((stream) => {
             return (
                 <div className="streamListContainer" key={stream.id}>
-                    <h1 className="streamListTitle">{stream.title}</h1>
+                    <Link to={`streams/${stream.id}`}>
+                        <h1 className="streamListTitle">{stream.title}</h1>
+                    </Link>
                     <h1 className="streamListDesc">{stream.description}</h1>
                     {renderAdmin(stream)}
                 </div>

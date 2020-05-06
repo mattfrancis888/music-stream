@@ -12,7 +12,7 @@ class StreamForm extends React.Component {
     };
 
     renderInput = ({ input, label, meta }) => {
-        //"component" automatically passes props to argument, it has {input properties and meta properties}
+        //"component" property automatically passes props to argument, it has {input properties and meta properties}
         //"label" automatically passes props to arguments
         return (
             <div>
@@ -46,6 +46,10 @@ class StreamForm extends React.Component {
                             component={this.renderInput}
                         />
                     </div>
+                    <div className="createFormSection">
+                        <h1> Enter Stream Link</h1>
+                        <Field name="streamLink" component={this.renderInput} />
+                    </div>
                     <button className="blueButton">Submit</button>
                 </form>
             </React.Fragment>
@@ -66,6 +70,18 @@ const validate = (formValues) => {
     if (!formValues.description) {
         errors.description = "You must enter a descritpion";
     }
+
+    if (!formValues.streamLink) {
+        errors.streamLink = "You must enter a link";
+    }
+
+    const url = "https://www.youtube.com/embed/";
+    if (formValues.streamLink) {
+        if (!formValues.streamLink.includes(url)) {
+            errors.streamLink = `URL must start with ${url}`;
+        }
+    }
+
     return errors;
     //Erors is going to be passed to renderInput's meta
 };

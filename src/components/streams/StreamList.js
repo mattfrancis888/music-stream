@@ -41,6 +41,14 @@ const StreamList = (props) => {
         return props.streams.map((stream) => {
             return (
                 <div className="streamListContainer" key={stream.id}>
+                    <iframe
+                        className="streamShowVideo"
+                        title={stream.streamLink}
+                        src={stream.streamLink}
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
                     <Link to={`streams/${stream.id}`}>
                         <h1 className="streamListTitle">{stream.title}</h1>
                     </Link>

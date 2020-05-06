@@ -28,6 +28,7 @@ const StreamEdit = (props) => {
                 initialValues={{
                     title: props.stream.title,
                     description: props.stream.description,
+                    streamLink: props.stream.streamLink,
                 }}
                 onSubmit={onSubmit}
             />

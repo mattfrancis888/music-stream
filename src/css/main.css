@@ -473,4 +473,9 @@ body {
   padding: 1rem 0;
 }
 
+.streamShowVideo {
+  width: 100%;
+  height: 35rem;
+}
+
 /*# sourceMappingURL=main.css.map */

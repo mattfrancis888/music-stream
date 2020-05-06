@@ -16,6 +16,14 @@ const StreamShow = (props) => {
     const { title, description } = props.stream;
     return (
         <React.Fragment>
+            <iframe
+                className="streamShowVideo"
+                title="hi"
+                src="https://www.youtube.com/embed/Pnp_7IaqW74"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
             <h1>{title}</h1>
             <h5>{description}</h5>
         </React.Fragment>

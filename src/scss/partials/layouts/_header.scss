@@ -9,9 +9,10 @@
     justify-content: space-between;
     align-items: center;
     img {
-        width: 6rem;
-        height: 6rem;
+        width: 2rem;
+        height: 2rem;
     }
+    z-index: 2;
 }
 
 .creatAndSignContainer {

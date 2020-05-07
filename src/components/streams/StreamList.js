@@ -2,11 +2,27 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchStreams } from "../../actions";
 import { Link } from "react-router-dom";
+import MediaQuery from "react-responsive";
+import anime from "animejs/lib/anime.es.js";
+import { MDBREAKPOINT } from "../../constants";
+import hero from "../../videos/hero.mp4";
+import mobilehero from "../../videos/mobilehero.mp4";
 
 const StreamList = (props) => {
     useEffect(() => {
         props.fetchStreams();
     }, []);
+
+    // let animation = anime({
+    //     targets: ".streamListContainer",
+    //     // Properties
+    //     translateX: [-100, 0],
+    //     // Property Parameters
+    //     duration: 350,
+    //     easing: "linear",
+    //     // Animation Parameters
+    //     // direction: "alternate",
+    // });
 
     const renderAdmin = (stream) => {
         //Show edit and delete button in the stream list if a stream belongs to them
@@ -28,14 +44,18 @@ const StreamList = (props) => {
     const renderList = () => {
         return props.streams.map((stream) => {
             return (
-                <div className="streamListContainer" key={stream.id}>
+                <div
+                    className="streamListContainer"
+                    onMouseOver={console.log("hover")}
+                    key={stream.id}
+                >
                     <iframe
                         className="streamShowVideo"
                         title={stream.streamLink}
                         src={stream.streamLink}
-                        frameborder="0"
+                        frameBorder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
+                        allowFullScreen
                     ></iframe>
                     <div className="streamInfoWrap">
                         {renderAdmin(stream)}
@@ -48,8 +68,40 @@ const StreamList = (props) => {
         });
     };
 
-    return <div className="streamsContainer">{renderList()}</div>;
+    return (
+        <React.Fragment>
+            <div className="heroContainer">
+                <MediaQuery query="(min-width: 0px)">
+                    <video
+                        className="heroVid"
+                        autoPlay
+                        preload="false"
+                        loop
+                        muted
+                        playsInline
+                        src={mobilehero}
+                        alt="mobile hero"
+                    ></video>
+                </MediaQuery>
+                <MediaQuery query={`(min-width:${MDBREAKPOINT})`}>
+                    <video
+                        className="heroVid"
+                        autoPlay
+                        preload="false"
+                        loop
+                        muted
+                        playsInline
+                        src={hero}
+                        alt="hero"
+                    ></video>
+                </MediaQuery>
+            </div>
+            <div className="streamsContainer">{renderList()}</div>
+        </React.Fragment>
+    );
 };
+
+//IOS fullscreens videos, so playsinline is added
 
 const mapStateToProps = (state) => {
     return {

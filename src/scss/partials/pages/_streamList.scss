@@ -1,14 +1,49 @@
+.heroContainer {
+    position: relative;
+    //width: 100%;
+    &::after {
+        content: "";
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 55vh;
+        background: linear-gradient(transparent, #000 80%);
+    }
+    height: 47rem;
+    z-index: -999; //Needed for parrallex effect below
+    //More ideal to put z index here because
+    //This is a parent of the video and has a
+    //POSITION:RELATIVE! thus, the child of this elmeent
+    //will always inherit this z-index!
+}
+
+.heroVid {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    //Resizes images via cropping while maintaining aspect ratio
+    // transition: opacity 0.125s ease-in;
+    //Creating parallelx effect
+    position: fixed;
+    top: 0;
+}
+
 .streamInfoWrap {
     padding: 2rem 0 2rem 2rem;
     display: flex;
     align-items: center;
 }
 .streamListTitle {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 2rem;
     color: white;
     text-decoration: none;
     margin: 0;
+    letter-spacing: 0.1rem;
+    font-family: europa;
+    text-transform: uppercase;
 }
 .editAndDeleteWrap {
     font-size: 1rem;
@@ -30,7 +65,7 @@
 }
 
 .streamsContainer {
-    margin-top: 5rem;
+    background-color: black;
     display: flex;
     flex-direction: column;
     @media screen and (min-width: $md_breakpoint) {

@@ -13,24 +13,12 @@ const StreamList = (props) => {
         //Will disappear when user signs out
         if (stream.userId === props.currentUserId) {
             return (
-                <div>
+                <div className="editAndDeleteWrap">
                     <Link to={`/streams/edit/${stream.id}`}>
-                        <button className="blueButton"> EDIT </button>
+                        <button className="whiteButton"> Edit </button>
                     </Link>
                     <Link to={`streams/delete/${stream.id}`}>
-                        <button className="redButton"> DELETE </button>
-                    </Link>
-                </div>
-            );
-        }
-    };
-
-    const renderCreate = () => {
-        if (props.isSignedIn) {
-            return (
-                <div>
-                    <Link to="/streams/new">
-                        <button className="blueButton"> Create Stream </button>
+                        <button className="greyButton"> Delete </button>
                     </Link>
                 </div>
             );
@@ -49,22 +37,18 @@ const StreamList = (props) => {
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen
                     ></iframe>
-                    <Link to={`streams/${stream.id}`}>
-                        <h1 className="streamListTitle">{stream.title}</h1>
-                    </Link>
-                    <h1 className="streamListDesc">{stream.description}</h1>
-                    {renderAdmin(stream)}
+                    <div className="streamInfoWrap">
+                        {renderAdmin(stream)}
+                        <Link to={`streams/${stream.id}`}>
+                            <h1 className="streamListTitle">{stream.title}</h1>
+                        </Link>
+                    </div>
                 </div>
             );
         });
     };
 
-    return (
-        <React.Fragment>
-            <div>{renderList()}</div>
-            {renderCreate()}
-        </React.Fragment>
-    );
+    return <div className="streamsContainer">{renderList()}</div>;
 };
 
 const mapStateToProps = (state) => {

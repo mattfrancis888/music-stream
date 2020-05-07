@@ -1,13 +1,10 @@
 @mixin commonButton {
     font-weight: bold;
-    color: white;
-    padding: 1rem;
-    font-size: 1.3rem;
-    border-radius: 0.8rem 0.8rem;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    border-radius: 0.4rem 0.4rem;
     border: none;
     &:hover {
-        background-color: $dark-blue;
-        transition: background-color 250ms linear;
         cursor: pointer;
     }
 }

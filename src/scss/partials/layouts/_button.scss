@@ -1,8 +1,9 @@
-.blueButton {
+.whiteButton {
     @include commonButton;
-    background-color: $blue-lotus;
+    background-color: white;
+    color: black;
     &:hover {
-        background-color: $dark-blue;
+        background-color: $light-grey;
         transition: background-color 250ms linear;
     }
 }
@@ -18,10 +19,10 @@
 
 .greyButton {
     @include commonButton;
-    background-color: $light-grey;
-    color: black;
+    background-color: $dark-grey;
+    color: white;
     &:hover {
-        background-color: $highlight-button-grey;
+        background-color: #4e4949;
         transition: background-color 250ms linear;
     }
 }

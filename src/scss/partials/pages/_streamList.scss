@@ -1,15 +1,44 @@
+.streamInfoWrap {
+    padding: 2rem 0 2rem 2rem;
+    display: flex;
+    align-items: center;
+}
 .streamListTitle {
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
     margin: 0;
 }
-
-.streamListDesc {
-    font-size: 1.3rem;
-    color: $dark-grey;
-    margin: 0;
+.editAndDeleteWrap {
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
 }
-
 .streamListContainer {
-    padding: 1rem 0;
+    width: 100%;
+    height: 45rem;
+    margin-bottom: 1rem;
+    @media screen and (min-width: $md_breakpoint) {
+        width: 50%;
+        // margin: 2rem;
+    }
+
+    button {
+        margin-right: 1.2rem;
+    }
+}
+
+.streamsContainer {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: $md_breakpoint) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        padding: 0 10rem;
+    }
 }

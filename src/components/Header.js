@@ -10,7 +10,9 @@ const Header = (props) => {
             return (
                 <div>
                     <Link to="/streams/new">
-                        <button className="whiteButton"> Create Stream </button>
+                        <button className="whiteButton">
+                            <h5> Create Stream</h5>
+                        </button>
                     </Link>
                 </div>
             );

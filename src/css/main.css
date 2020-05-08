@@ -384,53 +384,95 @@ body {
 }
 
 .whiteButton {
+  position: relative;
   font-weight: bold;
-  padding: 0.8rem;
-  font-size: 1.2rem;
-  border-radius: 0.4rem 0.4rem;
   border: none;
+  align-items: center;
+  letter-spacing: 0.2rem;
+  padding: 1rem 3rem;
   background-color: white;
+  border: 1px solid white;
   color: black;
 }
+.whiteButton::after {
+  content: ">";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+}
 .whiteButton:hover {
   cursor: pointer;
 }
-.whiteButton:hover {
-  background-color: #dfdfdf;
-  transition: background-color 250ms linear;
+.whiteButton:hover h5 {
+  left: 1rem;
+  margin-right: 0;
+  transition: all 0.25s ease 0s;
+}
+.whiteButton:hover::before {
+  content: ">";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+}
+.whiteButton:hover::after {
+  content: "";
+}
+.whiteButton h5 {
+  position: relative;
+  left: 0;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  transition: all 0.25s ease 0s;
 }
 
-.redButton {
+.blackButton {
+  position: relative;
   font-weight: bold;
-  padding: 0.8rem;
-  font-size: 1.2rem;
-  border-radius: 0.4rem 0.4rem;
   border: none;
-  background-color: red;
-}
-.redButton:hover {
-  cursor: pointer;
-}
-.redButton:hover {
-  background-color: #d10000;
-  transition: background-color 250ms linear;
-}
-
-.greyButton {
-  font-weight: bold;
-  padding: 0.8rem;
-  font-size: 1.2rem;
-  border-radius: 0.4rem 0.4rem;
-  border: none;
-  background-color: rgba(133, 133, 133, 0.6);
+  align-items: center;
+  letter-spacing: 0.2rem;
+  padding: 1rem 3rem;
+  border: 1px solid white;
   color: white;
+  background-color: black;
 }
-.greyButton:hover {
+.blackButton::after {
+  content: ">";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+}
+.blackButton:hover {
   cursor: pointer;
 }
-.greyButton:hover {
-  background-color: #4e4949;
-  transition: background-color 250ms linear;
+.blackButton:hover h5 {
+  left: 1rem;
+  margin-right: 0;
+  transition: all 0.25s ease 0s;
+}
+.blackButton:hover::before {
+  content: ">";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+}
+.blackButton:hover::after {
+  content: "";
+}
+.blackButton h5 {
+  position: relative;
+  left: 0;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  transition: all 0.25s ease 0s;
 }
 
 .modal {
@@ -491,6 +533,9 @@ body {
 
 .heroContainer {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 47rem;
   z-index: -999;
 }
@@ -504,13 +549,39 @@ body {
   height: 55vh;
   background: linear-gradient(transparent, #000 80%);
 }
+.heroContainer .heroTitle {
+  text-align: center;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0 5rem;
+  z-index: 1;
+}
+@media screen and (min-width: 768px) {
+  .heroContainer .heroTitle {
+    font-size: 2.85rem;
+  }
+}
 
 .heroVid {
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: fixed;
-  top: 0;
+}
+
+.bodyContainer {
+  background-color: black;
+  width: 100%;
+  text-align: center;
+}
+.bodyContainer > h1 {
+  margin: 0 0 2rem 0;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 
 .streamInfoWrap {
@@ -526,7 +597,6 @@ body {
   text-decoration: none;
   margin: 0;
   letter-spacing: 0.1rem;
-  font-family: europa;
   text-transform: uppercase;
 }
 
@@ -551,7 +621,6 @@ body {
 }
 
 .streamsContainer {
-  background-color: black;
   display: flex;
   flex-direction: column;
 }

@@ -31,10 +31,14 @@ const StreamList = (props) => {
             return (
                 <div className="editAndDeleteWrap">
                     <Link to={`/streams/edit/${stream.id}`}>
-                        <button className="whiteButton"> Edit </button>
+                        <button className="whiteButton">
+                            <h5> Edit </h5>
+                        </button>
                     </Link>
                     <Link to={`streams/delete/${stream.id}`}>
-                        <button className="greyButton"> Delete </button>
+                        <button className="blackButton">
+                            <h5> Delete</h5>
+                        </button>
                     </Link>
                 </div>
             );
@@ -71,6 +75,9 @@ const StreamList = (props) => {
     return (
         <React.Fragment>
             <div className="heroContainer">
+                <h1 className="heroTitle">
+                    All your favorite music videos here
+                </h1>
                 <MediaQuery query="(min-width: 0px)">
                     <video
                         className="heroVid"
@@ -96,7 +103,11 @@ const StreamList = (props) => {
                     ></video>
                 </MediaQuery>
             </div>
-            <div className="streamsContainer">{renderList()}</div>
+
+            <div className="bodyContainer">
+                <h1>Music Videos</h1>
+                <div className="streamsContainer">{renderList()}</div>
+            </div>
         </React.Fragment>
     );
 };

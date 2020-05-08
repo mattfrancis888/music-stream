@@ -63,11 +63,7 @@ const StreamList = (props) => {
     const renderList = () => {
         return props.streams.map((stream) => {
             return (
-                <div
-                    className="streamListContainer"
-                    onMouseOver={console.log("hover")}
-                    key={stream.id}
-                >
+                <div className="streamListContainer" key={stream.id}>
                     <iframe
                         className="streamShowVideo"
                         title={stream.streamLink}

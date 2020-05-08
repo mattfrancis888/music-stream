@@ -359,27 +359,47 @@ body {
   font: 1.1rem helvetica, arial, sans-serif;
 }
 
-.header {
-  background-color: #141414;
+.navOffsetInitial {
   position: fixed;
+  transition: all 0.5s ease 0s;
   top: 0;
   left: 0;
   display: flex;
   width: 100%;
-  padding: 1rem;
   justify-content: space-between;
   align-items: center;
   z-index: 2;
+  padding: 1rem 3rem;
+  top: 4.5rem;
+  padding: 1rem 7rem;
 }
-.header img {
+.navOffsetInitial img {
   width: 2rem;
   height: 2rem;
 }
 
-.creatAndSignContainer {
+.navOffsetScroll {
+  background-color: #141414;
+  position: fixed;
+  transition: all 0.5s ease 0s;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  padding: 1rem 3rem;
+}
+.navOffsetScroll img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.createAndSignContainer {
   display: flex;
 }
-.creatAndSignContainer button {
+.createAndSignContainer button {
   margin-left: 2rem;
 }
 

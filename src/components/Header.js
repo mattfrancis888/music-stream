@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import logo from "../img/logo.png";
 import GoogleAuth from "./GoogleAuth";
 
 const Header = (props) => {
+    const [offset, setOffset] = useState(0); //get scroll position
+    useEffect(() => {
+        window.onscroll = () => {
+            setOffset(window.pageYOffset); //re-renders onScroll
+        };
+    }, []);
+
     const renderCreate = () => {
         if (props.isSignedIn) {
             return (
@@ -20,17 +27,18 @@ const Header = (props) => {
     };
 
     return (
-        <div className="header">
+        <nav className={offset < 100 ? "navOffsetInitial" : "navOffsetScroll"}>
             <div>
                 <Link to="/">
                     <img src={logo} alt="logo" />
                 </Link>
             </div>
-            <div className="creatAndSignContainer">
+
+            <nav className="createAndSignContainer">
                 <GoogleAuth />
                 {renderCreate()}
-            </div>
-        </div>
+            </nav>
+        </nav>
     );
 };
 

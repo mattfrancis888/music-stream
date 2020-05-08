@@ -1,21 +1,15 @@
-.header {
-    background-color: #141414;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    width: 100%;
-    padding: 1rem;
-    justify-content: space-between;
-    align-items: center;
-    img {
-        width: 2rem;
-        height: 2rem;
-    }
-    z-index: 2;
+.navOffsetInitial {
+    // background-color: #141414;
+    @include nav;
+    top: 4.5rem;
+    padding: 1rem 7rem;
 }
 
-.creatAndSignContainer {
+.navOffsetScroll {
+    background-color: #141414;
+    @include nav;
+}
+.createAndSignContainer {
     display: flex;
     button {
         margin-left: 2rem;

@@ -43,3 +43,20 @@
         transition: all 0.25s ease 0s;
     }
 }
+
+@mixin nav {
+    position: fixed;
+    transition: all 0.5s ease 0s;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    img {
+        width: 2rem;
+        height: 2rem;
+    }
+    z-index: 2;
+    padding: 1rem 3rem;
+}

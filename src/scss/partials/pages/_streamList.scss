@@ -14,7 +14,7 @@
         height: 55vh;
         background: linear-gradient(transparent, #000 80%);
     }
-    height: 47rem;
+    height: 60rem;
     z-index: -999; //Needed for parrallex effect below(heroVId)
     //More ideal to put z index here because
     //This is a parent of the video and has a
@@ -47,16 +47,20 @@
 }
 
 .bodyContainer {
+    display: flex;
+    flex-direction: column; //used to avoid vertical margin collapse (in
+    //streamListLoadingWrap
     background-color: black;
     width: 100%;
     text-align: center;
     & > h1 {
-        margin: 0 0 2rem 0;
+        margin: 0 0 8rem 0;
         letter-spacing: 0.3rem;
         text-transform: uppercase;
         font-size: 2.5rem;
         font-weight: 600;
     }
+    padding-bottom: 10rem;
 }
 .streamInfoWrap {
     padding: 2rem 0 2rem 2rem;

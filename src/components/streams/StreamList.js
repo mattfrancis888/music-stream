@@ -23,6 +23,21 @@ const StreamList = (props) => {
     //     // Animation Parameters
     //     // direction: "alternate",
     // });
+    anime({
+        targets: ".loadingCircle",
+        translateY: [
+            { value: 75, duration: 500 },
+            { value: 0, duration: 800 },
+        ],
+        direction: "alternate",
+        easing: "easeInOutQuad",
+        delay: function () {
+            return anime.random(0, 1000);
+        },
+        // autoplay: false,
+        loop: true,
+        elasticity: 200,
+    });
 
     const renderAdmin = (stream) => {
         //Show edit and delete button in the stream list if a stream belongs to them
@@ -72,6 +87,24 @@ const StreamList = (props) => {
         });
     };
 
+    const renderContent = () => {
+        if (props.streams.length === 0) {
+            //If streams is being fetched
+            //Need a div above loadingWrap because loadingWrap uses inline-flex
+            return (
+                <div>
+                    <div className="loadingWrap">
+                        <div className="loadingCircle"></div>
+                        <div className="loadingCircle"></div>
+                        <div className="loadingCircle"></div>
+                    </div>
+                </div>
+            );
+        } else {
+            return <div className="streamsContainer">{renderList()}</div>;
+        }
+    };
+
     return (
         <React.Fragment>
             <div className="heroContainer">
@@ -106,7 +139,7 @@ const StreamList = (props) => {
 
             <div className="bodyContainer">
                 <h1>Music Videos</h1>
-                <div className="streamsContainer">{renderList()}</div>
+                {renderContent()}
             </div>
         </React.Fragment>
     );

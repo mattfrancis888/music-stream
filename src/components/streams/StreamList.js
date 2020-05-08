@@ -44,9 +44,9 @@ const StreamList = (props) => {
         //Will disappear when user signs out
         if (stream.userId === props.currentUserId) {
             return (
-                <div className="editAndDeleteWrap">
+                <React.Fragment>
                     <Link to={`/streams/edit/${stream.id}`}>
-                        <button className="whiteButton">
+                        <button className="blackButton">
                             <h5> Edit </h5>
                         </button>
                     </Link>
@@ -55,7 +55,7 @@ const StreamList = (props) => {
                             <h5> Delete</h5>
                         </button>
                     </Link>
-                </div>
+                </React.Fragment>
             );
         }
     };
@@ -73,10 +73,17 @@ const StreamList = (props) => {
                         allowFullScreen
                     ></iframe>
                     <div className="streamInfoWrap">
-                        {renderAdmin(stream)}
                         <Link to={`streams/${stream.id}`}>
                             <h1 className="streamListTitle">{stream.title}</h1>
                         </Link>
+                        <div className="streamButtonsContainer">
+                            <Link to={`streams/${stream.id}`}>
+                                <button className="whiteButton">
+                                    <h5> Info </h5>
+                                </button>
+                            </Link>
+                            {renderAdmin(stream)}
+                        </div>
                     </div>
                 </div>
             );

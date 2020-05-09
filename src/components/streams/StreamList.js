@@ -3,34 +3,16 @@ import { connect } from "react-redux";
 import { fetchStreams, animateHeader } from "../../actions";
 import { Link } from "react-router-dom";
 import MediaQuery from "react-responsive";
-import anime from "animejs/lib/anime.es.js";
 import { MDBREAKPOINT } from "../../constants";
 import hero from "../../videos/hero.mp4";
 import mobilehero from "../../videos/mobilehero.mp4";
-
+import Loading from "../Loading";
 const StreamList = (props) => {
     useEffect(() => {
         props.animateHeader(true); //changes the
         //animateHeaderReducer state, so Header componenet re-renders
         props.fetchStreams();
     }, []);
-
-    //Animate loading
-    anime({
-        targets: ".loadingCircle",
-        translateY: [
-            { value: 75, duration: 500 },
-            { value: 0, duration: 800 },
-        ],
-        direction: "alternate",
-        easing: "easeInOutQuad",
-        delay: function () {
-            return anime.random(0, 1000);
-        },
-        // autoplay: false,
-        loop: true,
-        elasticity: 200,
-    });
 
     const renderAdmin = (stream) => {
         //Show edit and delete button in the stream list if a stream belongs to them
@@ -88,12 +70,8 @@ const StreamList = (props) => {
             //If streams is being fetched
             //Need a div above loadingWrap because loadingWrap uses inline-flex
             return (
-                <div>
-                    <div className="loadingWrap">
-                        <div className="loadingCircle"></div>
-                        <div className="loadingCircle"></div>
-                        <div className="loadingCircle"></div>
-                    </div>
+                <div style={{ margin: "auto" }}>
+                    <Loading />
                 </div>
             );
         } else {

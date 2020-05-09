@@ -1,5 +1,11 @@
+.streamShowLoadingContainer {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
 .streamShowContainer {
-    margin-top: 11rem;
+    margin-top: 8rem;
     display: flex;
     text-align: center;
     flex-direction: column;

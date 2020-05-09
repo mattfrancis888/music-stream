@@ -27,7 +27,13 @@ const Header = (props) => {
     };
 
     return (
-        <nav className={offset < 100 ? "navOffsetInitial" : "navOffsetScroll"}>
+        <nav
+            className={
+                offset < 100 && props.headerAnimation.animateHeader === true
+                    ? "navOffsetInitial"
+                    : "navOffsetScroll"
+            }
+        >
             <div>
                 <Link to="/">
                     <img src={logo} alt="logo" />
@@ -45,6 +51,7 @@ const Header = (props) => {
 const mapStateToProps = (state) => {
     return {
         isSignedIn: state.auth.isSignedIn,
+        headerAnimation: state.headerAnimation,
     };
 };
 

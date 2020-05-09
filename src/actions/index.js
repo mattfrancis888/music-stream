@@ -7,6 +7,7 @@ import {
     FETCH_STREAM,
     DELETE_STREAM,
     EDIT_STREAM,
+    ANIMATE_HEADER,
 } from "./types";
 
 import history from "../history";
@@ -85,4 +86,11 @@ export const deleteStream = (id) => async (dispatch) => {
         payload: id,
     });
     history.push("/");
+};
+
+export const animateHeader = (shouldAnimate) => {
+    return {
+        type: ANIMATE_HEADER,
+        payload: shouldAnimate,
+    };
 };

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchStreams } from "../../actions";
+import { fetchStreams, animateHeader } from "../../actions";
 import { Link } from "react-router-dom";
 import MediaQuery from "react-responsive";
 import anime from "animejs/lib/anime.es.js";
@@ -10,6 +10,8 @@ import mobilehero from "../../videos/mobilehero.mp4";
 
 const StreamList = (props) => {
     useEffect(() => {
+        props.animateHeader(true); //changes the
+        //animateHeaderReducer state, so Header componenet re-renders
         props.fetchStreams();
     }, []);
 
@@ -170,4 +172,6 @@ const mapStateToProps = (state) => {
 //     }
 // }
 
-export default connect(mapStateToProps, { fetchStreams })(StreamList);
+export default connect(mapStateToProps, { fetchStreams, animateHeader })(
+    StreamList
+);

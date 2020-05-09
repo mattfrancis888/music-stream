@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchStream } from "../../actions";
+import { fetchStream, animateHeader } from "../../actions";
 
 const StreamShow = (props) => {
     useEffect(() => {
         props.fetchStream(props.match.params.id);
         //Fetch the current stream first.
         //If we dont and user enters /streams/edit, the state would be empty!
+        props.animateHeader(false);
     }, []);
 
     if (!props.stream) {
@@ -31,7 +32,11 @@ const StreamShow = (props) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-    return { stream: state.streams[ownProps.match.params.id] };
+    return {
+        stream: state.streams[ownProps.match.params.id],
+    };
 };
 
-export default connect(mapStateToProps, { fetchStream })(StreamShow);
+export default connect(mapStateToProps, { fetchStream, animateHeader })(
+    StreamShow
+);

@@ -15,16 +15,7 @@ const StreamList = (props) => {
         props.fetchStreams();
     }, []);
 
-    // let animation = anime({
-    //     targets: ".streamListContainer",
-    //     // Properties
-    //     translateX: [-100, 0],
-    //     // Property Parameters
-    //     duration: 350,
-    //     easing: "linear",
-    //     // Animation Parameters
-    //     // direction: "alternate",
-    // });
+    //Animate loading
     anime({
         targets: ".loadingCircle",
         translateY: [
@@ -67,7 +58,7 @@ const StreamList = (props) => {
             return (
                 <div className="streamListContainer" key={stream.id}>
                     <iframe
-                        className="streamShowVideo"
+                        className="streamListVideo"
                         title={stream.streamLink}
                         src={stream.streamLink}
                         frameBorder="0"

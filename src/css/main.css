@@ -495,6 +495,23 @@ body {
   transition: all 0.25s ease 0s;
 }
 
+.redButton {
+  background-image: linear-gradient(-216deg, #d63a76, #8c0038 50%, #d63a76);
+  background-size: 200% 100%;
+  border: none;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  padding: 1.5rem 2rem;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+.redButton:hover {
+  background-size: 300% 150%;
+  cursor: pointer;
+}
+
 .loadingWrap {
   display: inline-flex;
 }
@@ -529,38 +546,69 @@ body {
   margin-right: 0.5rem;
 }
 
-.createTitle {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  margin-top: 4rem;
-}
-
 .createInputs {
-  display: inline-block;
-  background-color: #dfdfdf;
-  border-radius: 1rem;
-  border: none;
+  display: block;
+  border: 1px solid #eaeaea;
   padding: 1rem;
-  margin-bottom: 0.5rem;
+  width: 100%;
 }
 .createInputs:focus {
-  border-color: #6960ec;
+  border-color: black;
   background-color: white;
 }
 
 .createFormSection {
-  display: grid;
-  grid-template-columns: repeat(2, 30rem);
-  margin-bottom: 1rem;
+  margin: 2rem 0;
 }
 .createFormSection h1 {
-  font-size: 1.4rem;
-  margin: 0;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: black;
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+}
+.createFormSection ol {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.5;
 }
 
 .errorText {
   color: red;
+}
+
+.streamCreateEditHero {
+  width: 100%;
+  height: 20rem;
+  display: block;
+  /* there will be a small space between img and div without display block !*/
+}
+
+.streamCreateEditOutline {
+  background-color: #eaeaea;
+  padding: 1.3rem;
+}
+
+.streamCreateEditContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem 10rem 2rem;
+  border-top: 0.4rem solid #b65959;
+  background-color: white;
+  color: black;
+}
+.streamCreateEditContainer h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+.streamCreateEditContainer .redButton {
+  display: block;
+  margin: 3rem auto 0 auto;
 }
 
 .heroContainer {

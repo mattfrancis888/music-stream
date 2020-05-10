@@ -1,0 +1,30 @@
+.streamCreateEditHero {
+    width: 100%;
+    height: 20rem;
+    display: block;
+    /* there will be a small space between img and div without display block !*/
+}
+.streamCreateEditOutline {
+    background-color: $outline-grey;
+    padding: 1.3rem;
+}
+
+.streamCreateEditContainer {
+    display: flex;
+    flex-direction: column; //Needed to center red button
+    padding: 2rem 2rem 10rem 2rem;
+    border-top: 0.4rem solid #b65959;
+    background-color: white;
+    color: black;
+    h3 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+
+    .redButton {
+        display: block;
+        margin: 3rem auto 0 auto;
+    }
+}

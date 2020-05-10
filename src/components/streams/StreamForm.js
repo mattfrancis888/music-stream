@@ -47,10 +47,18 @@ class StreamForm extends React.Component {
                         />
                     </div>
                     <div className="createFormSection">
-                        <h1> Enter Stream Link</h1>
+                        <h1> Enter Stream Embed Link</h1>
                         <Field name="streamLink" component={this.renderInput} />
+                        <h1>How Do I Find The Embed Link?</h1>
+                        <ol>
+                            <li>
+                                Click "Share" under the youtube video title.
+                            </li>
+                            <li> Click "Embed".</li>
+                            <li> Copy the "src" link.</li>
+                        </ol>
                     </div>
-                    <button className="blueButton">Submit</button>
+                    <button className="redButton">Submit</button>
                 </form>
             </React.Fragment>
         );

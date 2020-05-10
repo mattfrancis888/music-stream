@@ -11,3 +11,22 @@
     color: white;
     background-color: black;
 }
+
+.redButton {
+    background-image: linear-gradient(-216deg, #d63a76, #8c0038 50%, #d63a76);
+    background-size: 200% 100%;
+    border: none;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    padding: 1.5rem 2rem;
+    text-transform: uppercase;
+
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-size: 300% 150%;
+        cursor: pointer;
+    }
+}

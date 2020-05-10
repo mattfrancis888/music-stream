@@ -1,0 +1,34 @@
+.createInputs {
+    display: block;
+    border: 1px solid $outline-grey;
+    padding: 1rem;
+    &:focus {
+        border-color: black;
+        background-color: white;
+    }
+    width: 100%;
+}
+
+.createFormSection {
+    margin: 2rem 0;
+    h1 {
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: black;
+        font-size: 0.9rem;
+        margin-bottom: 0.7rem;
+    }
+
+    ol {
+        font-size: 0.9rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+        line-height: 1.5;
+    }
+}
+
+.errorText {
+    color: red;
+}

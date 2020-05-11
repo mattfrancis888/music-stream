@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import { createStream } from "../../actions";
 import StreamForm from "./StreamForm";
 //reduxForm acts like connect()
+import festivalSmall from "../../img/festivalSmall.jpg";
+import festivalMedium from "../../img/festivalMedium.jpg";
+import festivalLarge from "../../img/festivalLarge.jpg";
 
 class StreamCreate extends React.Component {
     onSubmit = (formValues) => {
@@ -15,8 +18,20 @@ class StreamCreate extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <h3>Create A Stream</h3>
-                <StreamForm onSubmit={this.onSubmit}></StreamForm>
+                <img
+                    src={festivalLarge}
+                    className="streamCreateEditHero"
+                    srcset={`${festivalSmall} 750w,
+                 ${festivalMedium} 1000w, 
+                 ${festivalLarge} 1200w`}
+                    alt="festival hero img"
+                />
+                <div className="streamCreateEditOutline">
+                    <div className="streamCreateEditContainer">
+                        <h3>Create A Stream</h3>
+                        <StreamForm onSubmit={this.onSubmit}></StreamForm>
+                    </div>
+                </div>
             </React.Fragment>
         );
     }

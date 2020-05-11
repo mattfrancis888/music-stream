@@ -2,6 +2,7 @@
     display: block;
     border: 1px solid $outline-grey;
     padding: 1rem;
+    font-size: 1.5rem;
     &:focus {
         border-color: black;
         background-color: white;
@@ -10,25 +11,31 @@
 }
 
 .createFormSection {
-    margin: 2rem 0;
+    // font-size: 0.9rem;
+    //font-size dosent make header 0.9rem specifially! must be done directly!
+    margin: 2.7rem 0;
     h1 {
         text-transform: uppercase;
-        font-size: 0.9rem;
         font-weight: 600;
-        letter-spacing: 1px;
-        color: black;
+        letter-spacing: 0.1rem;
+        color: $form-title-color;
         font-size: 0.9rem;
         margin-bottom: 0.7rem;
+        font-size: 1.45rem;
     }
 
     ol {
-        font-size: 0.9rem;
+        // color: #747482;
+        color: black;
+        font-size: 1.5rem;
         font-weight: 400;
-        letter-spacing: 1px;
+        letter-spacing: 0.1rem;
         line-height: 1.5;
     }
 }
 
 .errorText {
+    margin-top: 1rem;
     color: red;
+    font-size: 1.4rem;
 }

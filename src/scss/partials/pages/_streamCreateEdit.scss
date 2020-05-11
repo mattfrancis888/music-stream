@@ -2,29 +2,56 @@
     width: 100%;
     height: 20rem;
     display: block;
+    object-fit: cover; //used to maintian aspect raito by cutting certain parts of images off
     /* there will be a small space between img and div without display block !*/
+    @media screen and (min-width: $lg_breakpoint) {
+        position: fixed;
+        left: 0;
+        top: 5rem;
+        width: $create-edit-img-width;
+        height: 95vh;
+    }
 }
 .streamCreateEditOutline {
+    display: flex;
+    flex-direction: column;
     background-color: $outline-grey;
-    padding: 1.3rem;
+    padding: 2rem 0;
+    @media screen and (min-width: $md_breakpoint) {
+        padding: 4rem 5rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        margin-left: $create-edit-img-width;
+        margin-top: 5rem;
+        padding: 3rem;
+    }
 }
 
 .streamCreateEditContainer {
     display: flex;
     flex-direction: column; //Needed to center red button
     padding: 2rem 2rem 10rem 2rem;
-    border-top: 0.4rem solid #b65959;
+    border-top: 0.4rem solid $burgundy;
     background-color: white;
-    color: black;
+
+    margin: 2rem 3rem;
     h3 {
-        font-size: 1.25rem;
+        color: $create-edit-title;
+        font-size: 1.8rem;
         font-weight: 500;
         letter-spacing: 1px;
         margin-bottom: 15px;
+        @media screen and (min-width: $sm_breakpoint) {
+            font-size: 2rem;
+        }
     }
 
     .redButton {
         display: block;
+        font-size: 1.4rem;
         margin: 3rem auto 0 auto;
+        @media screen and (min-width: $md_breakpoint) {
+            font-size: 1.875rem;
+        }
     }
 }

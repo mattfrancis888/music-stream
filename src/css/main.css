@@ -550,6 +550,7 @@ body {
   display: block;
   border: 1px solid #eaeaea;
   padding: 1rem;
+  font-size: 1.5rem;
   width: 100%;
 }
 .createInputs:focus {
@@ -558,38 +559,65 @@ body {
 }
 
 .createFormSection {
-  margin: 2rem 0;
+  margin: 2.7rem 0;
 }
 .createFormSection h1 {
   text-transform: uppercase;
-  font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 1px;
-  color: black;
+  letter-spacing: 0.1rem;
+  color: #4c4e58;
   font-size: 0.9rem;
   margin-bottom: 0.7rem;
+  font-size: 1.45rem;
 }
 .createFormSection ol {
-  font-size: 0.9rem;
+  color: black;
+  font-size: 1.5rem;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0.1rem;
   line-height: 1.5;
 }
 
 .errorText {
+  margin-top: 1rem;
   color: red;
+  font-size: 1.4rem;
 }
 
 .streamCreateEditHero {
   width: 100%;
   height: 20rem;
   display: block;
+  object-fit: cover;
   /* there will be a small space between img and div without display block !*/
+}
+@media screen and (min-width: 992px) {
+  .streamCreateEditHero {
+    position: fixed;
+    left: 0;
+    top: 5rem;
+    width: 40%;
+    height: 95vh;
+  }
 }
 
 .streamCreateEditOutline {
+  display: flex;
+  flex-direction: column;
   background-color: #eaeaea;
-  padding: 1.3rem;
+  padding: 2rem 0;
+}
+@media screen and (min-width: 768px) {
+  .streamCreateEditOutline {
+    padding: 4rem 5rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .streamCreateEditOutline {
+    margin-left: 40%;
+    margin-top: 5rem;
+    padding: 3rem;
+  }
 }
 
 .streamCreateEditContainer {
@@ -598,17 +626,29 @@ body {
   padding: 2rem 2rem 10rem 2rem;
   border-top: 0.4rem solid #b65959;
   background-color: white;
-  color: black;
+  margin: 2rem 3rem;
 }
 .streamCreateEditContainer h3 {
-  font-size: 1.25rem;
+  color: #3c3c39;
+  font-size: 1.8rem;
   font-weight: 500;
   letter-spacing: 1px;
   margin-bottom: 15px;
 }
+@media screen and (min-width: 520px) {
+  .streamCreateEditContainer h3 {
+    font-size: 2rem;
+  }
+}
 .streamCreateEditContainer .redButton {
   display: block;
+  font-size: 1.4rem;
   margin: 3rem auto 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .streamCreateEditContainer .redButton {
+    font-size: 1.875rem;
+  }
 }
 
 .heroContainer {

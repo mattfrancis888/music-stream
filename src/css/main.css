@@ -347,6 +347,7 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 html {
@@ -369,17 +370,16 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 2;
-  padding: 1rem 3rem;
+  padding: 0 3rem;
   top: 4.5rem;
-  padding: 1rem 7rem;
 }
 .navOffsetInitial img {
-  width: 2rem;
-  height: 2rem;
+  width: 5.5rem;
+  height: 5.5rem;
 }
 
 .navOffsetScroll {
-  background-color: #141414;
+  background-color: black;
   position: fixed;
   transition: all 0.5s ease 0s;
   top: 0;
@@ -389,11 +389,11 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 2;
-  padding: 1rem 3rem;
+  padding: 0 3rem;
 }
 .navOffsetScroll img {
-  width: 2rem;
-  height: 2rem;
+  width: 5.5rem;
+  height: 5.5rem;
 }
 
 .createAndSignContainer {

@@ -17,7 +17,7 @@ const StreamShow = (props) => {
     //id would be the paramter name of the url, we are trying to get the value of it
 
     useEffect(() => {
-        //Usually you could put anime on componentDidMount (must wait for elements to render before using animation),
+        //Usually you could put anime on componentDidMount (animating only in componentDidmount),
         // but since we are rendering the  <Loading> if block first,
         //anime js  does not recognize streamShowInfoWrap because it was not an elmeent in return(...)
         //once stream does get it's data, the component gets re-rendered but!

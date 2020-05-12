@@ -29,11 +29,12 @@ const StreamList = (props) => {
         if (stream.userId === props.currentUserId) {
             return (
                 <React.Fragment>
-                    <Link to={`/streams/edit/${stream.id}`}>
-                        <button className="blackButton">
+                    <button className="blackButton">
+                        <Link to={`/streams/edit/${stream.id}`}>
                             <h5> Edit </h5>
-                        </button>
-                    </Link>
+                        </Link>
+                    </button>
+
                     <button
                         onClick={() => {
                             renderDeleteModal(stream);
@@ -64,11 +65,12 @@ const StreamList = (props) => {
                             <h1 className="streamListTitle">{stream.title}</h1>
                         </Link>
                         <div className="streamButtonsContainer">
-                            <Link to={`streams/${stream.id}`}>
-                                <button className="whiteButton">
+                            <button className="whiteButton">
+                                <Link to={`streams/${stream.id}`}>
                                     <h5> Info </h5>
-                                </button>
-                            </Link>
+                                </Link>
+                            </button>
+
                             {renderAdmin(stream)}
                         </div>
                     </div>

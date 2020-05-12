@@ -2,11 +2,10 @@
     // background-color: #141414;
     @include nav;
     top: 4.5rem;
-    padding: 1rem 7rem;
 }
 
 .navOffsetScroll {
-    background-color: #141414;
+    background-color: black;
     @include nav;
 }
 .createAndSignContainer {

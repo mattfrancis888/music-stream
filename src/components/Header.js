@@ -16,11 +16,11 @@ const Header = (props) => {
         if (props.isSignedIn) {
             return (
                 <div>
-                    <Link to="/streams/new">
-                        <button className="whiteButton">
+                    <button className="whiteButton">
+                        <Link to="/streams/new">
                             <h5> Create Stream</h5>
-                        </button>
-                    </Link>
+                        </Link>
+                    </button>
                 </div>
             );
         }

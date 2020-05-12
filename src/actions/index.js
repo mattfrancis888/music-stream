@@ -85,7 +85,9 @@ export const deleteStream = (id) => async (dispatch) => {
         type: DELETE_STREAM,
         payload: id,
     });
-    history.push("/");
+    //  history.push("/");
+    //StreamList's url, "/" re-renders without history.push();
+    //also history.push() won't "reset" react's hook values
 };
 
 export const animateHeader = (shouldAnimate) => {

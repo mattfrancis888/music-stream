@@ -43,4 +43,5 @@
     font-size: 1.3rem;
     margin: 0;
     line-height: 1.6;
+    white-space: pre-wrap; //used so it can detect /n text as new space
 }

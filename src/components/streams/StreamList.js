@@ -99,16 +99,21 @@ const StreamList = (props) => {
             return (
                 <React.Fragment>
                     <button
-                        onClick={() => props.deleteStream(showDeleteModal.id)}
+                        onClick={() => {
+                            props.deleteStream(showDeleteModal.id);
+                            setShowDeleteModal(null);
+                        }}
                         className="blackButton"
                     >
                         <h5>Delete</h5>
                     </button>
-                    <Link to="/">
-                        <button className="whiteButton">
-                            <h5>Cancel</h5>
-                        </button>
-                    </Link>
+
+                    <button
+                        onClick={() => setShowDeleteModal(null)}
+                        className="whiteButton"
+                    >
+                        <h5>Cancel</h5>
+                    </button>
                 </React.Fragment>
             );
             //on OnClick,there's a param in deleteStream, so wrap with anonymous func

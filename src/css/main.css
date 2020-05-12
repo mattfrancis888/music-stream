@@ -577,11 +577,11 @@ body {
 }
 
 .createInputs {
-  display: block;
   border: 1px solid #eaeaea;
   padding: 1rem;
   font-size: 1.5rem;
   width: 100%;
+  line-height: 1.3;
 }
 .createInputs:focus {
   border-color: black;
@@ -849,6 +849,7 @@ body {
   font-size: 1.3rem;
   margin: 0;
   line-height: 1.6;
+  white-space: pre-wrap;
 }
 
 /*# sourceMappingURL=main.css.map */

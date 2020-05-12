@@ -1,18 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { fetchStreams, animateHeader } from "../../actions";
+import { fetchStreams, animateHeader, deleteStream } from "../../actions";
 import { Link } from "react-router-dom";
 import MediaQuery from "react-responsive";
 import { MDBREAKPOINT } from "../../constants";
 import hero from "../../videos/hero.mp4";
 import mobilehero from "../../videos/mobilehero.mp4";
 import Loading from "../Loading";
+import Modal from "../Modal";
+
 const StreamList = (props) => {
     useEffect(() => {
         props.animateHeader(true); //changes the
         //animateHeaderReducer state, so Header componenet re-renders
         props.fetchStreams();
     }, []);
+
+    const [showDeleteModal, setShowDeleteModal] = useState(null);
+
+    const renderDeleteModal = (stream) => {
+        //Re-remders component to show modal
+        setShowDeleteModal(stream);
+    };
 
     const renderAdmin = (stream) => {
         //Show edit and delete button in the stream list if a stream belongs to them
@@ -25,11 +34,14 @@ const StreamList = (props) => {
                             <h5> Edit </h5>
                         </button>
                     </Link>
-                    <Link to={`streams/delete/${stream.id}`}>
-                        <button className="blackButton">
-                            <h5> Delete</h5>
-                        </button>
-                    </Link>
+                    <button
+                        onClick={() => {
+                            renderDeleteModal(stream);
+                        }}
+                        className="blackButton"
+                    >
+                        <h5> Delete</h5>
+                    </button>
                 </React.Fragment>
             );
         }
@@ -79,6 +91,47 @@ const StreamList = (props) => {
         }
     };
 
+    //Modal
+    const renderModalActions = () => {
+        if (showDeleteModal) {
+            return (
+                <React.Fragment>
+                    <button
+                        onClick={() => props.deleteStream(showDeleteModal.id)}
+                        className="blackButton"
+                    >
+                        <h5>Delete</h5>
+                    </button>
+                    <Link to="/">
+                        <button className="whiteButton">
+                            <h5>Cancel</h5>
+                        </button>
+                    </Link>
+                </React.Fragment>
+            );
+            //on OnClick,there's a param in deleteStream, so wrap with anonymous func
+        }
+    };
+    const renderModalContent = () => {
+        if (showDeleteModal) {
+            return `Are you sure you want delete the stream with title: ${showDeleteModal.title} ?`;
+        }
+    };
+
+    const renderModal = () => {
+        if (!showDeleteModal) return null;
+        else {
+            return (
+                <Modal
+                    title="Delete Stream"
+                    content={renderModalContent()}
+                    actions={renderModalActions()}
+                    onDismiss={() => setShowDeleteModal(null)}
+                />
+            );
+        }
+    };
+
     return (
         <React.Fragment>
             <div className="heroContainer">
@@ -115,6 +168,7 @@ const StreamList = (props) => {
                 <h1>Music Videos</h1>
                 {renderContent()}
             </div>
+            {renderModal()}
         </React.Fragment>
     );
 };
@@ -141,6 +195,8 @@ const mapStateToProps = (state) => {
 //     }
 // }
 
-export default connect(mapStateToProps, { fetchStreams, animateHeader })(
-    StreamList
-);
+export default connect(mapStateToProps, {
+    fetchStreams,
+    animateHeader,
+    deleteStream,
+})(StreamList);

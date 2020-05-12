@@ -24,11 +24,6 @@ const App = () => {
                         exact
                         component={StreamEdit}
                     />
-                    <Route
-                        path="/streams/delete/:id"
-                        exact
-                        component={StreamDelete}
-                    />
                     <Route path="/streams/:id" exact component={StreamShow} />
                 </Switch>
             </Router>

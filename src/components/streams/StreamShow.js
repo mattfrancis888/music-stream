@@ -12,6 +12,10 @@ const StreamShow = (props) => {
         //Fetch the current stream first.
         //If we dont and user enters /streams/edit, the state would be empty!
     }, []);
+    //empty useEffect acts like a ComponentDidMount()
+    //Reminder that <Route> in App.js passes a bunch of props to the componenet
+    //id would be the paramter name of the url, we are trying to get the value of it
+
     useEffect(() => {
         //Usually you could put anime on componentDidMount (must wait for elements to render before using animation),
         // but since we are rendering the  <Loading> if block first,
@@ -34,7 +38,7 @@ const StreamShow = (props) => {
     const renderContent = () => {
         if (!props.stream) {
             return (
-                <div className="streamShowLoadingContainer">
+                <div className="streamCenterLoadingContainer">
                     <Loading />
                 </div>
             );

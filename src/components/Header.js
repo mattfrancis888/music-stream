@@ -1,20 +1,63 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../img/twitch.png";
+import { connect } from "react-redux";
+import logo from "../img/logo.png";
 import GoogleAuth from "./GoogleAuth";
+import { useHistory } from "react-router";
 
-const Header = () => {
+const Header = (props) => {
+    const history = useHistory();
+    const [offset, setOffset] = useState(0); //get scroll position
+    useEffect(() => {
+        window.onscroll = () => {
+            setOffset(window.pageYOffset); //re-renders onScroll
+        };
+    }, []);
+
+    const renderCreate = () => {
+        if (props.isSignedIn) {
+            return (
+                <div>
+                    <button
+                        onClick={() => {
+                            history.push("/streams/new");
+                        }}
+                        className="whiteButton"
+                    >
+                        <h5> Create Stream</h5>
+                    </button>
+                </div>
+            );
+        }
+    };
+
     return (
-        <div className="header">
+        <nav
+            className={
+                offset < 100 && props.headerAnimation.animateHeader === true
+                    ? "navOffsetInitial"
+                    : "navOffsetScroll"
+            }
+        >
             <div>
                 <Link to="/">
-                    <img src={logo} alt="Twitch logo" />
+                    <img src={logo} alt="logo" />
                 </Link>
             </div>
-            <div>
+
+            <nav className="createAndSignContainer">
                 <GoogleAuth />
-            </div>
-        </div>
+                {renderCreate()}
+            </nav>
+        </nav>
     );
 };
-export default Header;
+
+const mapStateToProps = (state) => {
+    return {
+        isSignedIn: state.auth.isSignedIn,
+        headerAnimation: state.headerAnimation,
+    };
+};
+
+export default connect(mapStateToProps, null)(Header);

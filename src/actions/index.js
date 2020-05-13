@@ -7,6 +7,7 @@ import {
     FETCH_STREAM,
     DELETE_STREAM,
     EDIT_STREAM,
+    ANIMATE_HEADER,
 } from "./types";
 
 import history from "../history";
@@ -84,5 +85,14 @@ export const deleteStream = (id) => async (dispatch) => {
         type: DELETE_STREAM,
         payload: id,
     });
-    history.push("/");
+    //  history.push("/");
+    //StreamList's url, "/" re-renders without history.push();
+    //also history.push() won't "reset" react's hook values
+};
+
+export const animateHeader = (shouldAnimate) => {
+    return {
+        type: ANIMATE_HEADER,
+        payload: shouldAnimate,
+    };
 };

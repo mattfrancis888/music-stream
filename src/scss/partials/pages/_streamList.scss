@@ -1,15 +1,112 @@
+.heroContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //width: 100%;
+    &::after {
+        content: "";
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 55vh;
+        background: linear-gradient(transparent, #000 80%);
+    }
+    height: 60rem;
+    z-index: -999; //Needed for parrallex effect below(heroVId)
+    //More ideal to put z index here because
+    //This is a parent of the video and has a
+    //POSITION:RELATIVE! thus, the child of this elmeent
+    //will always inherit this z-index when you compare it to an
+    //element outside of this parent!
+
+    .heroTitle {
+        text-align: center;
+        letter-spacing: 0.3rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding: 0 5rem;
+        z-index: 1; //must override herovid, which hqs a position:fixed of z-index 0;
+        @media screen and (min-width: $md_breakpoint) {
+            font-size: 2.85rem;
+        }
+    }
+}
+
+.heroVid {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    //Resizes images via cropping while maintaining aspect ratio
+    // transition: opacity 0.125s ease-in;
+    //Creating parallelx effect
+}
+
+.bodyContainer {
+    display: flex;
+    flex-direction: column; //used to avoid vertical margin collapse (in
+    //streamListLoadingWrap
+    background-color: black;
+    width: 100%;
+    & > h1 {
+        margin: 0 auto 8rem auto;
+        letter-spacing: 0.3rem;
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+    padding-bottom: 10rem;
+}
+.streamInfoWrap {
+    padding: 2rem 0 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
 .streamListTitle {
-    font-weight: 600;
-    font-size: 2.5rem;
-    margin: 0;
+    font-weight: 700;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    margin: 0 0 2rem 0;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
 }
-
-.streamListDesc {
-    font-size: 1.3rem;
-    color: $dark-grey;
-    margin: 0;
+.streamButtonsContainer {
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
 }
-
 .streamListContainer {
-    padding: 1rem 0;
+    width: 100%;
+    height: 45rem;
+    margin-bottom: 6rem;
+    @media screen and (min-width: $md_breakpoint) {
+        width: 50%;
+        // margin: 2rem;
+    }
+
+    button {
+        margin-right: 1.2rem;
+    }
+}
+
+.streamListVideo {
+    width: 100%;
+    height: 35rem;
+}
+.streamsContainer {
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: $md_breakpoint) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        padding: 0 10rem;
+    }
 }

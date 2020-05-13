@@ -25,6 +25,22 @@ class StreamForm extends React.Component {
         //props to <input>
     };
 
+    renderTextArea = ({ input, label, meta }) => {
+        //"component" property automatically passes props to argument, it has {input properties and meta properties}
+        //"label" automatically passes props to arguments
+        return (
+            <div>
+                <label>{label}</label>
+                <textarea
+                    className="createInputs"
+                    {...input}
+                    autoComplete="off"
+                />
+                {this.renderError(meta)}
+            </div>
+        );
+    };
+
     onSubmit = (formValues) => {
         //event.preventDefault() is automatically called with handleSubmit, a redux-form property
         //form values are the values from the fields that redux-form automatiacally passes [which is done in streamForm]
@@ -43,14 +59,22 @@ class StreamForm extends React.Component {
                         <h1> Enter Description</h1>
                         <Field
                             name="description"
-                            component={this.renderInput}
+                            component={this.renderTextArea}
                         />
                     </div>
                     <div className="createFormSection">
-                        <h1> Enter Stream Link</h1>
+                        <h1> Enter Stream Embed Link</h1>
                         <Field name="streamLink" component={this.renderInput} />
+                        <h1>How Do I Find The Embed Link?</h1>
+                        <ol>
+                            <li>
+                                Click "Share" under the youtube video title.
+                            </li>
+                            <li> Click "Embed".</li>
+                            <li> Copy the "src" link.</li>
+                        </ol>
                     </div>
-                    <button className="blueButton">Submit</button>
+                    <button className="redButton">Submit</button>
                 </form>
             </React.Fragment>
         );

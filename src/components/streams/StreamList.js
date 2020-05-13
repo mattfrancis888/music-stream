@@ -26,29 +26,30 @@ const StreamList = (props) => {
     const renderAdmin = (stream) => {
         //Show edit and delete button in the stream list if a stream belongs to them
         //Will disappear when user signs out
-        if (stream.userId === props.currentUserId) {
-            return (
-                <React.Fragment>
-                    <button
-                        onClick={() =>
-                            props.history.push(`/streams/edit/${stream.id}`)
-                        }
-                        className="blackButton"
-                    >
-                        <h5> Edit </h5>
-                    </button>
+        // if (stream.userId === props.currentUserId) {
+        //Got rid for dpeloyment so that any user can click the renderAdmin buttons
+        return (
+            <React.Fragment>
+                <button
+                    onClick={() =>
+                        props.history.push(`/streams/edit/${stream.id}`)
+                    }
+                    className="blackButton"
+                >
+                    <h5> Edit </h5>
+                </button>
 
-                    <button
-                        onClick={() => {
-                            renderDeleteModal(stream);
-                        }}
-                        className="blackButton"
-                    >
-                        <h5> Delete</h5>
-                    </button>
-                </React.Fragment>
-            );
-        }
+                <button
+                    onClick={() => {
+                        renderDeleteModal(stream);
+                    }}
+                    className="blackButton"
+                >
+                    <h5> Delete</h5>
+                </button>
+            </React.Fragment>
+        );
+        // }
     };
 
     const renderList = () => {
@@ -109,7 +110,9 @@ const StreamList = (props) => {
                 <React.Fragment>
                     <button
                         onClick={() => {
-                            props.deleteStream(showDeleteModal.id);
+                            //DISABLED FOR DEPLOYMENT so that users can't manipuate online JSON database
+                            //comment out if want to use for local JSON-database
+                            // props.deleteStream(showDeleteModal.id);
                             setShowDeleteModal(null);
                         }}
                         className="blackButton"
@@ -123,6 +126,12 @@ const StreamList = (props) => {
                     >
                         <h5>Cancel</h5>
                     </button>
+
+                    <p className="deleteWarningText">
+                        Delete button disabled to prevent users from changing
+                        online JSON database. Need to be enabled in code if you
+                        want to change local JSON database.
+                    </p>
                 </React.Fragment>
             );
             //on OnClick,there's a param in deleteStream, so wrap with anonymous func

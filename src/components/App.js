@@ -10,6 +10,7 @@ import history from "../history";
 //Used Switch because React thinks strems/new and streams/id are identical,
 //so that it shows both. But if you use <switch> it will only show the first
 //visited route
+
 const App = () => {
     history.listen((_) => {
         window.scrollTo(0, 0);

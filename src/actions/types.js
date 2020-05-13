@@ -1,3 +1,5 @@
+export const JSON_STORAGE_URL =
+    "https://api.jsonbin.io/b/5ebb8e308284f36af7ba5609";
 export const SIGN_IN = "SIGN_IN";
 export const SIGN_OUT = "SIGN_OUT";
 export const CREATE_STREAM = "CREATE_STREAM";

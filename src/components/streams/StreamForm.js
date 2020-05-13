@@ -75,6 +75,11 @@ class StreamForm extends React.Component {
                         </ol>
                     </div>
                     <button className="redButton">Submit</button>
+                    <p className="submitWarningText">
+                        Submit button disabled to prevent users from changing
+                        online JSON database. Need to be enabled if wanting to
+                        change local JSON database.
+                    </p>
                 </form>
             </React.Fragment>
         );

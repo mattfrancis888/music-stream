@@ -1,4 +1,9 @@
-import streams from "../apis/streams";
+// import streams from "../apis/streams";
+// above is for local json database
+
+import streams from "../axiosConfig";
+// axios config used for online json database
+
 import {
     SIGN_IN,
     SIGN_OUT,
@@ -25,6 +30,8 @@ export const signOut = () => {
     };
 };
 
+//Note: not refactored to work in JSON-server online because
+///I don't want users manipulating the database
 export const createStream = (formValues) => async (dispatch, getState) => {
     //Must use redux thunk because action creators must return a plain object.
     //And we are tyring to return const result = await axios.get(...) -> (eg; return {payload: result})
@@ -53,21 +60,42 @@ export const createStream = (formValues) => async (dispatch, getState) => {
 };
 
 export const fetchStreams = () => async (dispatch) => {
-    const response = await streams.get("/streams");
+    // const response = await streams.get("/streams");
+    // dispatch({
+    //     type: FETCH_STREAMS,
+    //     payload: response.data,
+    // });
+    // above is local json-server database req
+
+    //below is online json server database req
+    const response = await streams.get("/");
+
     dispatch({
         type: FETCH_STREAMS,
-        payload: response.data,
+        payload: response.data.streams,
     });
 };
 
 export const fetchStream = (id) => async (dispatch) => {
-    const response = await streams.get(`/streams/${id}`);
+    // const response = await streams.get(`/streams/${id}`);
+    // dispatch({
+    //     type: FETCH_STREAM,
+    //     payload: response.data,
+    // });
+    // above is local json-server database req
+
+    // below is online json server database req
+    const response = await streams.get("/");
     dispatch({
         type: FETCH_STREAM,
-        payload: response.data,
+        payload: response.data.streams.filter(
+            (stream) => stream.id === parseInt(id)
+        )[0],
     });
 };
 
+//Note: not refactored to work in JSON-server online because
+///I don't want users manipulating the database
 export const editStream = (id, formValues) => async (dispatch) => {
     const response = await streams.patch(`streams/${id}`, formValues);
     //put updates all the object properties! It can delete some porperties if some properties are missing
@@ -79,6 +107,9 @@ export const editStream = (id, formValues) => async (dispatch) => {
     });
     history.push("/");
 };
+
+//Note: not refactored to work in JSON-server online because
+///I don't want users manipulating the database
 export const deleteStream = (id) => async (dispatch) => {
     await streams.delete(`streams/${id}`);
     dispatch({

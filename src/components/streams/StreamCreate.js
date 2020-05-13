@@ -16,7 +16,9 @@ const StreamCreate = (props) => {
         //Redux automaticlaly calls it with handleSubmit
         //form values are the values from the fields that redux-form automatiacally passes [Which is done in Streamform]
         //after clicking the submit button
-        props.createStream(formValues);
+        //DISABLED FOR DEPLOYMENT so that users can't manipuate online JSON database
+        //comment out if want to use for local JSON-database
+        // props.createStream(formValues);
     };
     return (
         <React.Fragment>

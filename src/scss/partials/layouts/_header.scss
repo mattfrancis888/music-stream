@@ -1,0 +1,16 @@
+.navOffsetInitial {
+    // background-color: #141414;
+    @include nav;
+    top: 4.5rem;
+}
+
+.navOffsetScroll {
+    background-color: black;
+    @include nav;
+}
+.createAndSignContainer {
+    display: flex;
+    button {
+        margin-left: 2rem;
+    }
+}

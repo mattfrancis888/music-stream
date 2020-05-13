@@ -1,0 +1,62 @@
+@mixin commonButton {
+    position: relative;
+    font-weight: bold;
+    border: none;
+    align-items: center;
+    letter-spacing: 0.2rem;
+    padding: 1rem 3rem;
+
+    &::after {
+        content: ">";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1rem;
+    }
+
+    &:hover {
+        cursor: pointer;
+        h5 {
+            left: 1rem;
+            margin-right: 0;
+            transition: all 0.25s ease 0s;
+        }
+        &::before {
+            content: ">";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 1rem;
+        }
+        &::after {
+            content: "";
+        }
+    }
+
+    h5 {
+        position: relative;
+        left: 0; //needs to be declared for transition of h5 to work on hover
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 0;
+        transition: all 0.25s ease 0s;
+    }
+}
+
+@mixin nav {
+    position: fixed;
+    transition: all 0.5s ease 0s;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    img {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+    z-index: 2;
+    padding: 0 3rem;
+}

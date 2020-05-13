@@ -1,0 +1,855 @@
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  /*If default font-size is 16px; 1 rem = 10 px*/
+  box-sizing: inherit;
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin-top: 5rem;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template,
+[hidden] {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  /*If default font-size is 16px; 1 rem = 10 px*/
+  font-size: 62.5%;
+}
+
+body {
+  /*Make default font-size bigger. If default font-size is 16px; 1.6 rem = 16 px*/
+  font: 1.1rem helvetica, arial, sans-serif;
+}
+
+.navOffsetInitial {
+  position: fixed;
+  transition: all 0.5s ease 0s;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  padding: 0 3rem;
+  top: 4.5rem;
+}
+.navOffsetInitial img {
+  width: 5.5rem;
+  height: 5.5rem;
+}
+
+.navOffsetScroll {
+  background-color: black;
+  position: fixed;
+  transition: all 0.5s ease 0s;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  padding: 0 3rem;
+}
+.navOffsetScroll img {
+  width: 5.5rem;
+  height: 5.5rem;
+}
+
+.createAndSignContainer {
+  display: flex;
+}
+.createAndSignContainer button {
+  margin-left: 2rem;
+}
+
+.whiteButton {
+  position: relative;
+  font-weight: bold;
+  border: none;
+  align-items: center;
+  letter-spacing: 0.2rem;
+  padding: 1rem 3rem;
+  background-color: white;
+  border: 1px solid white;
+  color: black;
+}
+.whiteButton::after {
+  content: ">";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+}
+.whiteButton:hover {
+  cursor: pointer;
+}
+.whiteButton:hover h5 {
+  left: 1rem;
+  margin-right: 0;
+  transition: all 0.25s ease 0s;
+}
+.whiteButton:hover::before {
+  content: ">";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+}
+.whiteButton:hover::after {
+  content: "";
+}
+.whiteButton h5 {
+  position: relative;
+  left: 0;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  transition: all 0.25s ease 0s;
+}
+
+.blackButton {
+  position: relative;
+  font-weight: bold;
+  border: none;
+  align-items: center;
+  letter-spacing: 0.2rem;
+  padding: 1rem 3rem;
+  border: 1px solid white;
+  color: white;
+  background-color: black;
+}
+.blackButton::after {
+  content: ">";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+}
+.blackButton:hover {
+  cursor: pointer;
+}
+.blackButton:hover h5 {
+  left: 1rem;
+  margin-right: 0;
+  transition: all 0.25s ease 0s;
+}
+.blackButton:hover::before {
+  content: ">";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+}
+.blackButton:hover::after {
+  content: "";
+}
+.blackButton h5 {
+  position: relative;
+  left: 0;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  transition: all 0.25s ease 0s;
+}
+
+.redButton {
+  background-image: linear-gradient(-216deg, #d63a76, #8c0038 50%, #d63a76);
+  background-size: 200% 100%;
+  border: none;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  padding: 1.5rem 2rem;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+.redButton:hover {
+  background-size: 300% 150%;
+  cursor: pointer;
+}
+
+.loadingWrap {
+  display: inline-flex;
+}
+
+.loadingCircle {
+  background-color: white;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 5rem;
+  margin-left: 2rem;
+}
+
+.streamCenterLoadingContainer {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(52, 49, 49, 0.4);
+}
+
+.modalBox {
+  background-color: black;
+  width: 90%;
+  border-radius: 0.8rem 0.8rem;
+  padding: 5rem 3rem;
+}
+@media screen and (min-width: 768px) {
+  .modalBox {
+    width: 80%;
+    padding: 5rem 9rem;
+  }
+}
+.modalBox button {
+  margin-right: 1rem;
+  text-transform: uppercase;
+}
+.modalBox h2 {
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 0.3rem solid white;
+}
+.modalBox h3 {
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+  line-height: 1.6;
+}
+
+.createInputs {
+  border: 1px solid #eaeaea;
+  padding: 1rem;
+  font-size: 1.5rem;
+  width: 100%;
+  line-height: 1.3;
+}
+.createInputs:focus {
+  border-color: black;
+  background-color: white;
+}
+
+.createFormSection {
+  margin: 2.7rem 0;
+}
+.createFormSection h1 {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: #4c4e58;
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+  font-size: 1.45rem;
+}
+.createFormSection ol {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  line-height: 1.5;
+}
+
+.errorText {
+  margin-top: 1rem;
+  color: red;
+  font-size: 1.4rem;
+}
+
+.streamCreateEditHero {
+  width: 100%;
+  height: 20rem;
+  display: block;
+  object-fit: cover;
+  /* there will be a small space between img and div without display block !*/
+}
+@media screen and (min-width: 992px) {
+  .streamCreateEditHero {
+    position: fixed;
+    left: 0;
+    top: 5rem;
+    width: 40%;
+    height: 95vh;
+  }
+}
+
+.streamCreateEditOutline {
+  display: flex;
+  flex-direction: column;
+  background-color: #eaeaea;
+  padding: 2rem 0;
+}
+@media screen and (min-width: 768px) {
+  .streamCreateEditOutline {
+    padding: 4rem 5rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .streamCreateEditOutline {
+    margin-left: 40%;
+    margin-top: 5rem;
+    padding: 3rem;
+  }
+}
+
+.streamCreateEditContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem 10rem 2rem;
+  border-top: 0.4rem solid #b65959;
+  background-color: white;
+  margin: 2rem 3rem;
+}
+.streamCreateEditContainer h3 {
+  color: #3c3c39;
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+@media screen and (min-width: 520px) {
+  .streamCreateEditContainer h3 {
+    font-size: 2rem;
+  }
+}
+.streamCreateEditContainer .redButton {
+  display: block;
+  font-size: 1.4rem;
+  margin: 3rem auto 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .streamCreateEditContainer .redButton {
+    font-size: 1.875rem;
+  }
+}
+
+.heroContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60rem;
+  z-index: -999;
+}
+.heroContainer::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 55vh;
+  background: linear-gradient(transparent, #000 80%);
+}
+.heroContainer .heroTitle {
+  text-align: center;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0 5rem;
+  z-index: 1;
+}
+@media screen and (min-width: 768px) {
+  .heroContainer .heroTitle {
+    font-size: 2.85rem;
+  }
+}
+
+.heroVid {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bodyContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  width: 100%;
+  padding-bottom: 10rem;
+}
+.bodyContainer > h1 {
+  margin: 0 auto 8rem auto;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.streamInfoWrap {
+  padding: 2rem 0 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.streamListTitle {
+  font-weight: 700;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  margin: 0 0 2rem 0;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.streamButtonsContainer {
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+}
+
+.streamListContainer {
+  width: 100%;
+  height: 45rem;
+  margin-bottom: 6rem;
+}
+@media screen and (min-width: 768px) {
+  .streamListContainer {
+    width: 50%;
+  }
+}
+.streamListContainer button {
+  margin-right: 1.2rem;
+}
+
+.streamListVideo {
+  width: 100%;
+  height: 35rem;
+}
+
+.streamsContainer {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .streamsContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .streamsContainer {
+    padding: 0 10rem;
+  }
+}
+
+.streamShowContainer {
+  margin-top: 8rem;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  padding-bottom: 5rem;
+}
+@media screen and (min-width: 768px) {
+  .streamShowContainer {
+    padding-bottom: 12rem;
+  }
+}
+
+.streamShowVideo {
+  width: 100%;
+  height: 35rem;
+  margin: auto;
+}
+@media screen and (min-width: 520px) {
+  .streamShowVideo {
+    height: 38rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .streamShowVideo {
+    height: 45rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .streamShowVideo {
+    width: 95%;
+    height: 53rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .streamShowVideo {
+    width: 90%;
+    height: 55rem;
+  }
+}
+
+.streamShowTitle {
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  margin: 4rem 0 1.5rem 0;
+}
+
+.streamShowDesc {
+  font-weight: 400;
+  letter-spacing: 0.25rem;
+  font-size: 1.3rem;
+  margin: 0;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/*# sourceMappingURL=main.css.map */

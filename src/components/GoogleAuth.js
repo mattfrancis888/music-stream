@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { signIn, signOut } from "../actions";
 
+//gapi will be undefined if there are no internet connections
 class GoogleAuth extends React.Component {
     //Handle if user is signed in or not
     componentDidMount() {

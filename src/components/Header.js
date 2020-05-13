@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import logo from "../img/logo.png";
 import GoogleAuth from "./GoogleAuth";
+import { useHistory } from "react-router";
 
 const Header = (props) => {
+    const history = useHistory();
     const [offset, setOffset] = useState(0); //get scroll position
     useEffect(() => {
         window.onscroll = () => {
@@ -16,10 +18,13 @@ const Header = (props) => {
         if (props.isSignedIn) {
             return (
                 <div>
-                    <button className="whiteButton">
-                        <Link to="/streams/new">
-                            <h5> Create Stream</h5>
-                        </Link>
+                    <button
+                        onClick={() => {
+                            history.push("/streams/new");
+                        }}
+                        className="whiteButton"
+                    >
+                        <h5> Create Stream</h5>
                     </button>
                 </div>
             );

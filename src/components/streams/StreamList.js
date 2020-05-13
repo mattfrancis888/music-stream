@@ -29,10 +29,13 @@ const StreamList = (props) => {
         if (stream.userId === props.currentUserId) {
             return (
                 <React.Fragment>
-                    <button className="blackButton">
-                        <Link to={`/streams/edit/${stream.id}`}>
-                            <h5> Edit </h5>
-                        </Link>
+                    <button
+                        onClick={() =>
+                            props.history.push(`/streams/edit/${stream.id}`)
+                        }
+                        className="blackButton"
+                    >
+                        <h5> Edit </h5>
                     </button>
 
                     <button
@@ -65,10 +68,13 @@ const StreamList = (props) => {
                             <h1 className="streamListTitle">{stream.title}</h1>
                         </Link>
                         <div className="streamButtonsContainer">
-                            <button className="whiteButton">
-                                <Link to={`streams/${stream.id}`}>
-                                    <h5> Info </h5>
-                                </Link>
+                            <button
+                                onClick={() =>
+                                    props.history.push(`streams/${stream.id}`)
+                                }
+                                className="whiteButton"
+                            >
+                                <h5> Info </h5>
                             </button>
 
                             {renderAdmin(stream)}
@@ -94,6 +100,9 @@ const StreamList = (props) => {
     };
 
     //Modal
+    //Need to set showDeleteMOdal(null) because despite the state re-rendering
+    //The hook values does not change. Which means the modal box would sitll appear
+
     const renderModalActions = () => {
         if (showDeleteModal) {
             return (

@@ -20,9 +20,7 @@ const StreamEdit = (props) => {
 
     const onSubmit = (formValues) => {
         //Form value is automatically passed
-        //DISABLED FOR DEPLOYMENT so that users can't manipuate online JSON database
-        //comment out if want to use for local JSON-database
-        //  props.editStream(props.match.params.id, formValues);
+        props.editStream(props.match.params.id, formValues);
     };
     //console.log(props);
     //Because we use <route> there are several props that are automatically passed into the componenet
@@ -44,7 +42,7 @@ const StreamEdit = (props) => {
                     <img
                         src={festivalLarge}
                         className="streamCreateEditHero"
-                        srcset={`${festivalSmall} 750w,
+                        srcSet={`${festivalSmall} 750w,
                          ${festivalMedium} 1000w, 
                          ${festivalLarge} 1200w`}
                         alt="festival hero img"

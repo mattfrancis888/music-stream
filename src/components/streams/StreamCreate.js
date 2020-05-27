@@ -11,21 +11,20 @@ const StreamCreate = (props) => {
     useEffect(() => {
         props.animateHeader(false);
     }, []);
+
     const onSubmit = (formValues) => {
         //event.preventDefault()
         //Redux automaticlaly calls it with handleSubmit
         //form values are the values from the fields that redux-form automatiacally passes [Which is done in Streamform]
         //after clicking the submit button
-        //DISABLED FOR DEPLOYMENT so that users can't manipuate online JSON database
-        //comment out if want to use for local JSON-database
-        // props.createStream(formValues);
+        props.createStream(formValues);
     };
     return (
         <React.Fragment>
             <img
                 src={festivalLarge}
                 className="streamCreateEditHero"
-                srcset={`${festivalSmall} 750w,
+                srcSet={`${festivalSmall} 750w,
                 ${festivalMedium} 1000w, 
                 ${festivalLarge} 1200w`}
                 alt="festival hero img"

@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "json-server -p 3001 -w db.json"
+        "start:json": "json-server -p 3001 -w db.json",
+        "start": "node server.js"
     },
     "author": "Matthew Francis",
     "license": "ISC",

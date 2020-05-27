@@ -2,19 +2,14 @@
 
 A collection of music videos from Youtube. Users can stream, publish, edit, delete music videos when signed in. Users can only see other published music videos when not logged in.
 
-However, for testing/previewing accessibility; the code is commented out so any user can edit and delete videos.
+Developed with React, Redux, JS, HTML, CSS, [JSON-server for a JSON database and a server/API for REST requests](https://github.com/typicode/json-server)
 
-Developed with React, Redux, JS, HTML, CSS, [JSON-server for a local database communicated via REST requests](https://github.com/typicode/json-server).
-
-# Warning
-
-`Delete Stream Button`, and `Submit Button` for editing and creating a stream are disabled. It is done to prevent users from changing the online JSON database.
-
-To enable the button functionality for your own local JSON database, the set up instructions are below.
+For storage purposes, all data created will be stored temporarily in the databse then it'll be automatically deleted after a certain amount of time.
 
 # Why I Built It and What I've Learned:
 
 -   To understand how Redux simplifies data management between components.
+-   Understanding how a front-end needs a server to communicate to a database.
 
 ## Redux:
 
@@ -52,19 +47,9 @@ To enable the button functionality for your own local JSON database, the set up 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-1. Clone the project. Use `npm install` to install all the dependencies. Run the project with `npm run develop` for development or `npm run build` for production.
-   Note: the name 'develop' and 'build' could be configured and renamed in package.json.
+1. Clone the project. Use `npm install` to install all the dependencies. Run the project with `npm start` for development or `npm run build` for production.
 
-2. On the terminal, go to the `database` directory. Type `npm start` to start the local JSON-server database.
-
-3. Uncomment the import line in `actions/index.js`. The imported code would import the local JSON-server database. Comment out the axios import since it is only needed for the online database.
-
-4. Uncomment the following code in `actions/index.js`; replace the `fetchStreams()` and `fetchStream()` with the commented out code that is meant for JSON-server local database. Comment out the rest of the code.
-
-5. Uncomment the `onClick` functions inside the `Submit, Edit and Delete button` on `StreamForm's onSubmit()`, `StreamEdit's onSubmit()`, and `StreamList's renderModalActions()`. This will enable stream creation, edit and deletion with the local database.
-   You can find the code by finding this comment:
-   //DISABLED FOR DEPLOYMENT so that users can't manipuate online JSON database
-   //comment out if want to use for local JSON-database
+2. OPTIONAL: If you want to make changes locally, on the terminal, go to the `backend` directory. Type `npm start` to start the local JSON-server server/api which will connect the front-end to the database. Then change the axiosConfig route file to http://localhost:3000. Uncomment the "write" code in server.js too.
 
 # Prerequisites
 

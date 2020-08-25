@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import logo from "../img/logo.png";
 import GoogleAuth from "./GoogleAuth";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 
 const Header = (props) => {
     const history = useHistory();
